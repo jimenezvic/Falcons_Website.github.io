@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/index.js",
     "client": "npm run dev --prefix client/falcons",
     "build": "npm run build --prefix client/falcons",
