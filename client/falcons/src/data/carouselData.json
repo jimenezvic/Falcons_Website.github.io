@@ -1,0 +1,19 @@
+{
+    "slides":[
+        {
+            "src":"https://loremflickr.com/320/240/collegesoccer",
+            "alt":"Image 1 for carousel"
+        },
+
+        {
+            "src":"https://loremflickr.com/320/240/soccerstadium",
+            "alt":"Image 2 for carousel"
+        },
+
+        {
+            "src":"https://loremflickr.com/320/240/soccerfinal",
+            "alt":"Image 3 for carousel"
+        }
+
+    ]
+}
