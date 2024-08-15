@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT
 const conn = require('./db/conn')
 conn()
-const falcsRoutes = require('./routes/falcs')
+const falcsRoutes = require('./routes/falcs.js')
 const bodyParser = require('body-parser')
 const Falc = require('./models/falc');
 
