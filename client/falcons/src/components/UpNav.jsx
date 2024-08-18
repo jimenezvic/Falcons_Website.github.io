@@ -1,20 +1,21 @@
-import React from 'react'
+import React from 'react';
+import './UpNav.css'; // Assuming the CSS is in a separate file
 
-function UpNav() {
+const UpNav = () => {
+
   return (
     <>
-    <div className=''>
-    <div className='upper-let'>
-        <h4>Unlock Your Potencial</h4>
-        <div className='bottom-let'>
-        <p>Embrance Teamwork and Archieve Greatness</p>
-        </div>
-    </div>
-    </div>
+      <div className='top-navbar'>
+        <h1>Top Navbar</h1>
+        {/* Add other content here */}
 
-      
+      <div className='scroll-navbar'>
+        <h1>Scroll Navbar</h1>
+        {/* Add other content here */}
+      </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default UpNav
+export default UpNav;
