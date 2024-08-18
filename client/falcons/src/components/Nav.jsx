@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css'
-
+import UpNav from './UpNav';
 function Nav() {
   return (
     <>
@@ -9,7 +9,7 @@ function Nav() {
 
       <nav className="navbar navbar-bottom">
 
-
+    <UpNav />
         <div className="nav-content">
           <Link to="/proyect">
             <p>About our project</p>

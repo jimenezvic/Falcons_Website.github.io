@@ -8,7 +8,7 @@ import Form from "./components/Form"
 import Policies from "./components/Policies";
 import Slider from "./components/Slider";
 import Players from './components/Players';
-
+import UpNav from "./components/UpNav";
 
 function App() {
   
