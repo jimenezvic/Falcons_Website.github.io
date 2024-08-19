@@ -1,3 +1,8 @@
+.active{
+    background-color: rgb(230, 207, 0);
+    border-radius: 100%;
+}
+
 .nav-second {
     background-color: white;
     position: sticky;
@@ -26,4 +31,31 @@ li {
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+.links:hover{
+    color: rgb(54, 120, 53);
+}
+.links:not(.active):hover{
+    background-color: aliceblue;
+}
+nav ul{
+    display: flex;
+
+}
+nav .menu{
+    display: flex;
+position: absolute;
+top: 0.75rem;
+right: 0.5rem;
+flex-direction: column;
+justify-content: space-between;
+width: 2.24rem;
+height: 2rem;
+}
+
+nav .menu span{
+    height: 0.4rem;
+    width: 100%;
+    background-color: #ba2727;
+    border-radius: 0.2rem;
 }

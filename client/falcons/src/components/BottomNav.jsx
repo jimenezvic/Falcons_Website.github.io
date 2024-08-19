@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './BottomNav.css'; 
 
 function BottomNav() {
@@ -9,11 +9,17 @@ function BottomNav() {
         <div className="logo">
           <h1>FALCONS</h1>
         </div>
+        <div className="menu">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <ul className="flex">
-          <li><Link to="/proyect" className="links">Proyect</Link></li>
-          <li><Link to="/registration" className="links">Registration</Link></li>
-          <li><Link to="/" className="links">Matches</Link></li>
-          <li><Link to="/policies" className="links">Register</Link></li>
+          <li><NavLink to="/proyect" className="links">Proyect</NavLink></li>
+          <li><NavLink to="/registration" className="links">Registration</NavLink></li>
+          <li><NavLink to="/" className="links">Matches</NavLink></li>
+          <li><NavLink to="/policies" className="links">Register</NavLink></li>
         </ul>
       </nav>
     </>
