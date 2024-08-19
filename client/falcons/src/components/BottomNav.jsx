@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
-
+import {Link} from 'react-router-dom'
 import './BottomNav.css'; 
 
 function BottomNav(){
   return (
 <>
 
-    <div className="bottom">
-      <nav>
-        <span>
-          <h5>A div</h5>
-        </span>
-      </nav>
-    </div>
+    <nav className="nav-second">
+      
+    </nav>
 
 </>
 

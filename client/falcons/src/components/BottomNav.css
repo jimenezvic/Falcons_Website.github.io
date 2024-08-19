@@ -1,8 +1,12 @@
 .bottom{
-    background-color: rgb(254, 0, 0);
+    background-color: white;
     position:sticky;
     display:flex;
     top: 0;
-    color: aquamarine;
+    color: rgb(0, 0, 0);
     z-index: 1000;
+}
+.flex{
+    display:flex;
+    justify-content: space-between;
 }

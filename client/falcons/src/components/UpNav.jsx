@@ -1,5 +1,6 @@
 import React from 'react';
-import './UpNav.css'; // Assuming the CSS is in a separate file
+import {Link} from 'react-router-dom';
+import './UpNav.css'; 
 import BottomNav from './BottomNav';
 
 const UpNav = () => {
@@ -8,10 +9,13 @@ const UpNav = () => {
     <>
 
       <div className='top-navbar'>
-        <h1>Top Navbar</h1>
+       
+        <h1>🪽</h1>
 
       <div className='scroll-navbar'>
-        <h1>Scroll Navbar</h1>
+      <span className='official'>THE OFFICIAL WEBSITE OF THE</span>
+
+        <p>Falcons Academy</p>
 
       </div>
 

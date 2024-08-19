@@ -1,16 +1,43 @@
 /* Style for the top navbar */
+.crimson-text-regular {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.cormorant-garamond-light {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.faster-one-regular {
+  font-family: "Faster One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.rajdhani-medium {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.xanh-mono-regular {
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .top-navbar {
     /* position:fixed; */
     display: flex;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #555;
+    background-image: linear-gradient(to bottom right, rgb(2, 42, 11), rgb(46, 110, 14));
     color: white;
     padding: 10px 0;
     text-align: center;
     z-index: 1000;
     transition: transform 0.3s ease-in-out;
+    font-family: "Crimson Text" , serif;
   }
   
   /* Style for the scroll navbar */
@@ -19,12 +46,25 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #003e1e;
-    color: white;
+    background-image: linear-gradient(to bottom right, rgb(2, 42, 11), rgb(46, 110, 14));
+    color: rgba(255, 254, 254, 0.911);
     padding: 10px 0;
     text-align: center;
     z-index: 999;
     transition: transform 0.3s ease-in-out;
+    font-size: 25px;
+    letter-spacing: 15px;
+    font-family: "Xanh Mono", monospace;
+  }
+  .official{
+    color: rgb(255, 255, 255);
+    font-family: "Rajdhani", sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding: 0 10px;
+    
   }
   
   /* Initially hidden state for the scroll navbar */
