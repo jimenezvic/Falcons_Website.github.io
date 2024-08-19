@@ -6,15 +6,19 @@ const UpNav = () => {
 
   return (
     <>
+
       <div className='top-navbar'>
         <h1>Top Navbar</h1>
 
       <div className='scroll-navbar'>
         <h1>Scroll Navbar</h1>
+
       </div>
+
       </div>
-      
-    <BottomNav />
+      <BottomNav />
+
+
     </>
   );
 };

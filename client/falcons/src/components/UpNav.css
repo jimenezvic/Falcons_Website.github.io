@@ -1,6 +1,6 @@
 /* Style for the top navbar */
 .top-navbar {
-    /* position:fixed;
+    /* position:fixed; */
     display: flex;
     top: 0;
     left: 0;
@@ -10,11 +10,11 @@
     padding: 10px 0;
     text-align: center;
     z-index: 1000;
-    transition: transform 0.3s ease-in-out; */
+    transition: transform 0.3s ease-in-out;
   }
   
   /* Style for the scroll navbar */
-  /* .scroll-navbar {
+  .scroll-navbar {
     position:relative;
     top: 0;
     left: 0;
@@ -25,7 +25,7 @@
     text-align: center;
     z-index: 999;
     transition: transform 0.3s ease-in-out;
-  } */
+  }
   
   /* Initially hidden state for the scroll navbar */
   .hidden {

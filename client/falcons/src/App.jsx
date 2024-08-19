@@ -23,7 +23,7 @@ function useNav(){
 
   return (
     <>
-   { useNav() ? <BottomNav /> : <> </>}
+   { useNav() ? <UpNav /> : <> </>}
      
   
       <Routes>
