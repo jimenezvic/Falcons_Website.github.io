@@ -1,0 +1,21 @@
+.thewhole{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+
+.top-navbar{
+    display: inline-block;
+    height: 40px;
+    cursor: pointer;
+
+}
+.bottom-navbar{
+    height: 70px;
+    position: fixed;
+    top: 0;
+}

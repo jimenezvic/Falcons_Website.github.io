@@ -9,6 +9,7 @@ import Policies from "./components/Policies";
 import Slider from "./components/Slider";
 import Players from './components/Players';
 import UpNav from "./components/UpNav";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   
@@ -22,7 +23,7 @@ function useNav(){
 
   return (
     <>
-   { useNav() ? <UpNav /> : <> </>}
+   { useNav() ? <BottomNav /> : <> </>}
      
   
       <Routes>

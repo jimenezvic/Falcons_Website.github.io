@@ -9,7 +9,6 @@ function Nav() {
 
       <nav className="navbar navbar-bottom">
 
-    {/* <UpNav /> */}
         <div className="nav-content">
           <Link to="/proyect">
             <p>About our project</p>
