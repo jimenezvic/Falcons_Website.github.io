@@ -1,12 +1,29 @@
-.bottom{
+.nav-second {
     background-color: white;
-    position:sticky;
-    display:flex;
+    position: sticky;
+    display: flex;
     top: 0;
     color: rgb(0, 0, 0);
     z-index: 1000;
+    align-items: center;
+    padding: 10px 20px;
 }
-.flex{
-    display:flex;
+
+ul {
+    list-style-type: none;
+    display: flex;
     justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0 10px; 
+}
+
+.links {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }

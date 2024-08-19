@@ -67,12 +67,12 @@
     
   }
   
-  /* Initially hidden state for the scroll navbar */
+  
   .hidden {
     transform: translateY(-100%);
   }
   
-  /* Visible state for the scroll navbar */
+
   .visible {
     transform: translateY(0);
   }
