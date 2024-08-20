@@ -1,3 +1,4 @@
+
 .faster-one-regular {
   font-family: "Faster One", system-ui;
   font-weight: 400;
@@ -16,10 +17,16 @@
   padding-top: 30%;
 
 }
+.theFormLink{
+  text-decoration: none;
+  font-family: "Xanh Mono", monospace;
+  color: #bebebe;
+}
 .btn{
   display: flex;
   justify-content: center;
   padding-top: 20%;
+  cursor:auto;
 }
 .button-85 {
   width: 15rem;
@@ -43,14 +50,14 @@ content: "";
 background: linear-gradient(
   45deg,
   #ff0000,
-  #ff7300,
-  #fffb00,
-  #48ff00,
-  #05430b,
+  #bf4f4f,
+  #ca3012,
+  #9d1717,
+  #fdfffe,
   #eb1515,
-  #d8e82c,
+  #5c1103,
   #140f0f,
-  #ff0000
+  #ffffff
 );
 position: absolute;
 top: -2px;

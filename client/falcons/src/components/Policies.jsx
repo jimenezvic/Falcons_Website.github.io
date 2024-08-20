@@ -36,8 +36,15 @@ function Policies() {
     </div>
     <div className="register-div">
       <h3 className='tlt'>READY TO JOIN US?</h3>
-      <p className='messg'>Click the button below and fill out the form</p>
-      <span className='btn'><button className="button-85" role="button">Button 85</button></span>
+      <p className='messg'>Click the button below & fill out the form</p>
+      <div className='btn'><button className="button-85" role="button"><Link to="/form" target="_blank" rel="noopener noreferrer" className='theFormLink'>Click to Continue </Link>
+      </button></div>
+      
+{/*     
+    <Routes>
+        <Route path="/form" element={<Form />} />
+      </Routes> */}
+
 
     </div>
   </div>
