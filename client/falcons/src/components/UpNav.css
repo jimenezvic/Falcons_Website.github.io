@@ -24,14 +24,23 @@
   font-weight: 400;
   font-style: normal;
 }
+.moul-regular {
+  font-family: "Moul", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
+@font-face{
+  font-family: 'Falcons Font';
+  src: url('../../public/font/FalconsFont.ttf') format('truetype');
+}
 .top-navbar {
     /* position:fixed; */
     display: flex;
     top: 0;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(to bottom right, rgb(2, 42, 11), rgb(46, 110, 14));
+    background: linear-gradient(to right, #900000, #000000);
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -46,14 +55,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(to bottom right, rgb(2, 42, 11), rgb(46, 110, 14));
+    background: linear-gradient(to right, #900000, #000000);
+    /* background: linear-gradient(to right, #042d21, #07563E); */
     color: rgba(255, 254, 254, 0.911);
     padding: 10px 0;
     text-align: center;
     z-index: 999;
     transition: transform 0.3s ease-in-out;
     font-size: 25px;
-    letter-spacing: 15px;
+    letter-spacing: 5px;
     font-family: "Xanh Mono", monospace;
   }
   .official{
@@ -76,4 +86,15 @@
   .visible {
     transform: translateY(0);
   }
-  
+  .falcon-logo{
+    width: 7rem;
+    height: 6rem;
+    cursor: pointer;
+  }
+  .falcones{
+    font-family: "Falcons Font", serif;
+    letter-spacing: 14px;
+    color: rgb(255, 253, 253);
+    font-size: 5vh;
+
+  }
