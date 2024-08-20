@@ -1,0 +1,27 @@
+.bigDiv{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: ffff;
+    padding: 150px ;
+}
+
+.mediumDiv{
+    display: flex;
+    width: 100%;
+    background-color: none;
+    max-width: 1200px;
+}
+.picDiv, .formDiv{
+    padding: 20px;
+    background-color: none;
+    box-sizing: border-box;
+}
+
+.formDiv{
+   
+
+}
+.registrationpic{
+    width: 15rem;
+    height: 15rem;
+}
