@@ -44,7 +44,7 @@ function Slider() {
         <div className="list">
           {[...Array(itemCount)].map((_, index) => (
             <div key={index} className={`item ${activeIndex === index ? 'active' : ''}`}>
-              <img src={`/images/home.jpg`} alt={`Slide ${index + 1}`} />
+              <img src={`/images/dude2.jpg`} alt={`Slide ${index + 1}`} />
               <div className='content'>
                 <p>design</p>
                 <h2>Slider {index + 1}</h2>

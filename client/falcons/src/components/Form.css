@@ -27,6 +27,13 @@
 
 }
 
+mark{
+  background-color: #b30c0c;
+  color: #ffff;
+  letter-spacing: 7px;
+  border-radius: 60%;
+}
+
 .lett{
     font-family: "Rajdhani", sans-serif;
     text-align: center;

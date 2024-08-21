@@ -104,6 +104,8 @@ nav .menu span{
     text-decoration: none;
     font-family: "Falcons Font";
     font-size: large;
+    background-color: rgb(23, 23, 127);
+    color: #ffff;
     
 }
 .falcones{

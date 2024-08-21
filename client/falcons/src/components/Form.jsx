@@ -10,7 +10,6 @@ function Form() {
   const [position, setPosition] = useState('');
   const [showPopup, setShowPopup] = useState(false);
 
-  // Show popup when the component mounts
   useEffect(() => {
     setShowPopup(true);
   }, []);
@@ -108,18 +107,17 @@ function Form() {
         </div>
 
         <div className="formDiv">
-          <h2 className="lett co">Letter from the Coach</h2>
+        <h2 className="lett co"><mark>Letter from the Coach</mark></h2>
           
-          <h4 className="lett co">We’re so excited to have you with us. First off, I want to thank you for putting your trust in this project. Falcons Academy was born with a strong belief and purpose: every player has potential, and we're here to help you discover and reach it. Together, we’ll work hard to bring out the best in each of you.
+          <h4 className="lett co"><mark>We’re so excited to have you with us. First off, I want to thank you for putting your trust in this project. Falcons Academy was born with a strong belief and purpose: every player has potential, and we're here to help you discover and reach it. Together, we’ll work hard to bring out the best in each of you.
 
-          Looking forward to this journey with you!</h4>
+          Looking forward to this journey with you!</mark></h4>
 
-          <h5 className="lett">Best,</h5>
-          <h5>Ivan Jimenez</h5>
+          <h5 className="lett"><mark>Best,</mark></h5>
+          <h5><mark>Ivan Jimenez</mark></h5>
         </div>
       </div>
 
-      {/* Pop-up Modal */}
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-content">

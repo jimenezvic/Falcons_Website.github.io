@@ -23,7 +23,9 @@ const [menuOpen, setMenuOpen] = useState(false)
           <span></span>
         </div>
         <ul className={menuOpen ? "open" : ""}>
+          <div className='title'>
           <li className='title'>Falcons Academy</li>
+          </div>
           <li><NavLink to="/proyect" className="links">Proyect</NavLink></li>
           <li><NavLink to="/registration" className="links">Registration</NavLink></li>
           <li><NavLink to="/" className="links">Matches</NavLink></li>
