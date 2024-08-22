@@ -26,50 +26,80 @@ function Slider() {
     setActiveIndex(index);
   };
 
-  return (
-    <div className="body">
-      <header className='header'>
-        <div className='logo'></div>
-        {/* <ul className='menu'>
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Info</li>
-        </ul> */}
-        {/* <div className="search">
-          <i className="bi bi-search">Search</i>
-        </div> */}
-      </header>
 
+
+  const slides = [
+{
+  image: '/images/home.jpg',
+  title: 'Slider 1',
+  description: "Lorem"
+},
+{
+  image: '/images/dude2.jpg',
+  title: 'Slider 2',
+  description: "Lorem"
+},
+{
+  image: '/images/players.jpg',
+  title: 'Slider 3',
+  description: "Lorem"
+},
+{
+  image: '/images/main.jpg',
+  title: 'Slider 4',
+  description: "Lorem"
+}
+  ]
+
+  return (
+    <>
+
+    <div className="body">
       <div className="slider">
         <div className="list">
-          {[...Array(itemCount)].map((_, index) => (
+          {slides.map((slide, index)=>(
             <div key={index} className={`item ${activeIndex === index ? 'active' : ''}`}>
-              <img src={`/images/dude2.jpg`} alt={`Slide ${index + 1}`} />
+              <img src={slide.image} alt={`Slide ${index + 1}`} />
               <div className='content'>
-                <p>design</p>
-                <h2>Slider {index + 1}</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque esse debitis voluptate libero harum rerum eos ipsam, accusamus neque vel dicta vitae possimus ducimus explicabo aut dolores eveniet obcaecati nesciunt.
-                </p>
+              <p>Design</p>
+              <h2>{slide.title}</h2>
+              <p>{slide.description}</p>
               </div>
-            </div>
+              </div>
           ))}
         </div>
         <div className="arrows">
           <button id='prev' onClick={goToPrevSlide}>-</button>
           <button id='next' onClick={goToNextSlide}>-</button>
         </div>
-        {/* Thumbnail Section */}
-        {/* <div className="thumbnail">
-          {[...Array(itemCount)].map((_, index) => (
-            <div key={index} className={`item ${activeIndex === index ? 'active' : ''}`} onClick={() => handleThumbnailClick(index)}>
-              <img src={`/images/players.jpg`} className='content' alt={`Thumbnail ${index + 1}`} />
-              Slider {index + 1}
-            </div>
-          ))}
-        </div> */}
+      
       </div>
+
+  <div className="myBody">  
+    <div className='bd'>
+      <div className="pd1"><img src="images/hommie.jpg" alt="First Image"  id='pd1'/></div>
+        <div className="md"><img src="images/middle.jpg" alt="Middle Image" id='pd3' /></div>
+           <div className="pd2"><img src="images/dude.jpg" alt="Second Image" id='pd2'/></div>
+  </div>
     </div>
+<div className="map">
+
+<div className='mapholder'>
+<iframe width="750" height="750" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=750&amp;height=750&amp;hl=en&amp;q=2199%20Smith%20Road%20West%20Chicago,%20IL%2060185%20United%20States+(Falcons%20Nest)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps vehicle tracker</a></iframe></div>
+
+<div className="infoholder">
+<div className="titleholder"><span id='titleholder'>Location & Hours</span></div>
+<div className="descriptionholder"><span id='text'>As part of our mission at Falcons Academy, quality is a must. All our locations are well planned to make every player feel like they are in the best place to play and develop. </span>
+<span id='text'>Temporary we have decided to have our nest in the location shown but if we decide to change the location you will receive updates</span>
+<div className='soxer' ><img src="images/favorite.png" alt="" id='soxer' /></div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+    </>
   );
 }
 
