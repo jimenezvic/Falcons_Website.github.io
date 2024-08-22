@@ -10,20 +10,37 @@ import Slider from "./components/Slider";
 import Players from './components/Players';
 import UpNav from "./components/UpNav";
 import BottomNav from "./components/BottomNav";
-
+import React, {useState, useEffect} from "react";
+import Loader from "./components/Loader";
 function App() {
-  
-const Location = useLocation();
+
+const location = useLocation();
 
 function useNav(){
   const paths = ['/', '/proyect', '/registration', '/policies', '/slider'];
-  return paths.includes(Location.pathname)
+  return paths.includes(location.pathname)
 }
 
 
-  return (
+const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const dataFetch = () => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 4000);
+    };
+    dataFetch();
+  }, []);
+
+
+  return  (
+    isLoading ? <Loader /> : (
+
     <>
-   { useNav() ? <UpNav /> : <> </>}
+
+
+   { useNav()&& UpNav ? <UpNav /> : <> </>}
      
   
       <Routes>
@@ -38,6 +55,7 @@ function useNav(){
     
       </Routes>
     </>
+    )
   )
 }
 

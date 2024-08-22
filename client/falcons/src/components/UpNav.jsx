@@ -18,7 +18,7 @@ const UpNav = () => {
        
         <h1></h1>
        
-        <img src="images/newLogo.png" alt="Falcon Logo" className='falcon-logo' onClick={mainPage}/>
+        {/* <img src="images/myLogo.png" alt="Falcon Logo" className='falcon-logo' onClick={mainPage}/> */}
        
       <div className='scroll-navbar'>
       <span className='official'>THE OFFICIAL WEBSITE OF THE</span>
