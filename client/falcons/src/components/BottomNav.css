@@ -1,3 +1,4 @@
+
 .active{
     /* background-color: rgb(174, 198, 179); */
     border-radius: 1rem;
@@ -13,6 +14,8 @@
     align-items: center;
     padding: 10px 20px;
     flex-wrap: wrap;
+    /* max-width:100vw; */
+    /* overflow-x:hidden; */
 }
 
 ul {
@@ -22,6 +25,7 @@ ul {
     width: 100%;
     margin: 0;
     padding: 0;
+    
 }
 
 li {
@@ -29,7 +33,8 @@ li {
 }
 
 .links {
-    position: relative;
+    position:relative;
+
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -51,6 +56,9 @@ li {
     bottom: -4px;
     left: 20px;
 }
+nav{
+    padding: 15px 20px;
+}
 nav ul{
     display: flex;
 
@@ -58,12 +66,14 @@ nav ul{
 nav .menu{
 display: none;
 position: absolute;
-top: 0.75rem;
+top: 2rem;
 right: 0.5rem;
 flex-direction: column;
-justify-content: space-between;
+justify-content:space-between;
 width: 2.24rem;
 height: 2rem;
+cursor: pointer;
+transform: translateY(-70%)
 }
 
 nav .menu span{
@@ -71,28 +81,31 @@ nav .menu span{
     width: 100%;
     background-color: #ba2727;
     border-radius: 0.2rem;
+    
 }
 
 @media (max-width: 480px){
     nav .menu{
         display: flex;
     }
-    /* nav ul {
+    nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
         margin-bottom: 0.25rem;
-      } */
+      }
     nav{
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
     }
 
     nav ul{
         display: none;
         flex-direction: column;
         width: 100%;
+        margin-top: 3rem;
         margin-bottom: 0.25rem;
+        
     }
 
     nav ul.open{
@@ -121,3 +134,7 @@ nav .menu span{
     font-size: 5vh;
 
   }
+#follow{
+    font-family: "Falcons Font";
+
+}

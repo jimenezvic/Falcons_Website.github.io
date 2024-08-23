@@ -1,8 +1,9 @@
 
 .body{
-    margin: 0;
+    margin: 0 auto;
     /* background-color:#000; */
     color: #eee;
+
 }
 .bd{
     display: grid;
@@ -22,6 +23,13 @@
     width: 500px;
 
 }
+
+.myBody{
+    /* display: flex;
+    position:relative; */
+    
+}
+
 .md{
 display: flex;
 background: linear-gradient(#2d0202, #9198e5);
@@ -50,7 +58,7 @@ color:#ffffff;
     height: 550%;
     padding-top: 40px;
 }
-#maps {
+.map {
     display: flex;
     width: 100%; 
     height: 100%; 

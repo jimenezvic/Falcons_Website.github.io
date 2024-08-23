@@ -33,7 +33,7 @@ function Proyect() {
 
 
   return (
-    <div>
+    <div className='contactDiv'>
       <Players />
     <section className="contact">
       <form onSubmit={onSubmit}>

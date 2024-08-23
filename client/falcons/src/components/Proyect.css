@@ -1,3 +1,7 @@
+.contactDiv{
+        overflow-x:hidden;
+    display: inline-block
+}
 .contact{
     display: flex;
     justify-content: center;

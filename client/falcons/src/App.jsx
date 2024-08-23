@@ -40,7 +40,7 @@ const [isLoading, setIsLoading] = useState(true);
     <>
 
 
-   { useNav()&& UpNav ? <UpNav /> : <> </>}
+   { useNav() ? <UpNav /> : <> </>}
      
   
       <Routes>

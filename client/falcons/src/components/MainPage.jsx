@@ -19,6 +19,12 @@ function MainPage() {
         <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p></div>
         <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p></div>
         <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p></div>
+
+
+        {/* <div className="videoUniform">
+  <video  id='video' src='images/uniformVideo.mp4' type="video/mp4" autoPlay loop muted>
+  </video>
+</div> */}
       </div>
     
   );

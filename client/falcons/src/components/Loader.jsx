@@ -5,7 +5,7 @@ function Loader() {
   return (
     <div className='loader'>
       <div className="svgwrapper">
-        <img src="images/soccer.webp" alt="LogoPic" className='rotating-image' />
+        <img src="images/myLogo.png" alt="LogoPic" className='rotating-image' />
       </div>
     </div>
   );
