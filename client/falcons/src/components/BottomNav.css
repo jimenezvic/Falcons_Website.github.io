@@ -1,6 +1,5 @@
 
 .active{
-    /* background-color: rgb(174, 198, 179); */
     border-radius: 1rem;
 }
 
@@ -14,8 +13,8 @@
     align-items: center;
     padding: 10px 20px;
     flex-wrap: wrap;
-    /* max-width:100vw; */
-    /* overflow-x:hidden; */
+    overflow-x: auto;
+    
 }
 
 ul {
@@ -25,11 +24,13 @@ ul {
     width: 100%;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
     
 }
 
 li {
     margin: 0 10px; 
+    flex-shrink: 0;
 }
 
 .links {
@@ -115,6 +116,10 @@ nav .menu span{
     nav ul li{
         width: 100%;
         text-align: center;
+    }
+    .nav-second{
+        padding: 0;
+        overflow-x: auto;
     }
 
 }

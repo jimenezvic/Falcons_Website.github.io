@@ -12,9 +12,6 @@ function BottomNav() {
   return (
     <>
       <nav className="nav-second">
-        <div className="logo">
-          {/* <p className='title'>FALCONS ACADEMY</p> */}
-        </div>
         <div className="menu" onClick={toggleMenu}>
           <span></span>
           <span></span>

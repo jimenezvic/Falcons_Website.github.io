@@ -69,10 +69,12 @@ function Slider() {
           ))}
         </div>
           <div className="arrows">
-            <button id='prev' onClick={goToPrevSlide}>-</button>
-            <button id='next' onClick={goToNextSlide}>-</button>
+            <button id='prev' onClick={goToPrevSlide}></button>
+            <button id='next' onClick={goToNextSlide}>=</button>
           </div>
       </div>
+
+      
 
 
 </div>

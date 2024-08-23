@@ -16,12 +16,15 @@
     opacity: 0;
     transform: scale(0.1);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    height: 100vh;
   }
   
   .slider .list .item img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: center;
+    
   }
   
   .slider .list .item .content {
@@ -65,11 +68,11 @@
   }
   
   .arrows button {
-    background-color: #eee5;
+    background-color: rgba(237, 231, 231, 0.592);
     border: none;
     font-family: monospace;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     border-radius: 5px;
     font-size: large;
     color: #eee;
@@ -83,6 +86,10 @@
   
   /* Responsive Styles */
   @media (max-width: 768px) {
+    .slider .list .item img{
+        object-fit: cover;
+        height: auto;
+    }
     .slider {
       height: 50vh; 
     }
@@ -95,15 +102,43 @@
       font-size: 12px; 
       letter-spacing: 3px;
     }
-  
-    .arrows {
-      right: 10px;
-    }
-  
-    .arrows button {
-      width: 25px;
-      height: 25px;
-      font-size: medium;
-    }
+  .arrows button{
+    width: 30px;
+    height: 30px;
+    font-size: medium;
   }
-  
+  .arrows{
+    padding: 0 10px;
+  }
+    
+  }
+  .arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 100;
+    padding: 0 20px;
+  }
+
+  .arrows button {
+    width: 40px;
+    height: 40px;
+    font-size: monospace;
+    background-color: #eee5;
+    border: none;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: 0.5s;
+  }
+  .arrows #prev{
+    position: relative;
+    left: 0;
+  }
+  .arrows #next{
+    position: relative;
+    right: 0;
+  }
