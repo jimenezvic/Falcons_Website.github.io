@@ -7,6 +7,9 @@
 }
 .main-div {
   display: flex;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  max-width: 100vw;
 
 }
 .faster-one-regular {
