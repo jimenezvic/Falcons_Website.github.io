@@ -10,6 +10,7 @@ import Slider from "./components/Slider";
 import Players from './components/Players';
 import UpNav from "./components/UpNav";
 import BottomNav from "./components/BottomNav";
+import Card from "./components/Card";
 import React, {useState, useEffect} from "react";
 import Loader from "./components/Loader";
 function App() {

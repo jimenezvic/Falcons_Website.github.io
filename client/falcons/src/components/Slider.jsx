@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Card from './Card'
 import '../components/Slider.css';
 
 function Slider() {
@@ -68,13 +69,27 @@ function Slider() {
               </div>
           ))}
         </div>
-          <div className="arrows">
+          {/* <div className="arrows">
             <button id='prev' onClick={goToPrevSlide}></button>
-            <button id='next' onClick={goToNextSlide}>=</button>
-          </div>
+            <button id='next' onClick={goToNextSlide}><i class="fa-solid fa-greater-than"></i></button>
+          </div> */}
       </div>
 
-      
+      <div className="card-cont">
+        <div className="card">
+            <Card />
+        </div>
+        <div className="card">
+            <Card />
+        </div>
+        <div className="card">
+            <Card />
+        </div>
+      </div>
+
+    <div className="map-wrapper">
+    <iframe className='googlemap' width="100%" height="600" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=2199%20Smith%20Road%20West%20Chicago,%20IL%2060185%20United%20States+(Nest)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps systems</a></iframe>
+    </div>
 
 
 </div>

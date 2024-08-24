@@ -3,31 +3,45 @@ import { NavLink } from 'react-router-dom';
 import './BottomNav.css'; 
 
 function BottomNav() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const[click, setClick] = useState(false)
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const handleClick = () => setClick(!click);
 
+ 
   return (
     <>
-      <nav className="nav-second">
-        <div className="menu" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+      <nav className='navbar'>
+        <div className="nav-container">
+          <NavLink exact to='/' className='nav-logo' activeClassName='active' onClick={handleClick}>
+          Falcons Academy
+          </NavLink>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className='nav-item'>
+            <NavLink exact to='/' className='nav-links' activeClassName='active' onClick={handleClick}>
+          Home
+          </NavLink>
+            </li>
+            <li className='nav-item'>
+          <NavLink exact to='/proyect' className='nav-links' activeClassName='active' onClick={handleClick}>
+          Proyect
+          </NavLink>
+            </li>
+            <li className='nav-item'>
+            <NavLink exact to='/registration' className='nav-links' activeClassName='active' onClick={handleClick}>
+          Registration
+          </NavLink>
+            </li>
+            <li className='nav-item'>
+            <NavLink exact to='/policies' className='nav-links' activeClassName='active' onClick={handleClick}>
+          Register
+          </NavLink>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
+          </div>
         </div>
-        <ul className={menuOpen ? "open" : ""}>
-          <li id='follow'><NavLink to="/proyect" className="links">FALCONS ACADEMY</NavLink></li>
-          <li><NavLink to="/proyect" className="links">Proyect</NavLink></li>
-          <li><NavLink to="/registration" className="links">Registration</NavLink></li>
-          <li><NavLink to="/" className="links">Matches</NavLink></li>
-          <li><NavLink to="/policies" className="links">Register</NavLink></li>
-        </ul>
       </nav>
-
-
     </>
   );
 }

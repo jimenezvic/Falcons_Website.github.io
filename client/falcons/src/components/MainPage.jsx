@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import { slides } from "../data/carouselData.json";
 import Loader from './Loader';
+import Card from './Card';
 
 function MainPage() {
  
@@ -20,11 +21,8 @@ function MainPage() {
         <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p></div>
         <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p></div>
 
-
-        {/* <div className="videoUniform">
-  <video  id='video' src='images/uniformVideo.mp4' type="video/mp4" autoPlay loop muted>
-  </video>
-</div> */}
+      <Card />
+     
       </div>
     
   );
