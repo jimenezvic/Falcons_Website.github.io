@@ -82,9 +82,16 @@ function Slider() {
         <div className="card">
             <Card />
         </div>
+        
+      </div>
+      <div className="card-cont">
         <div className="card">
             <Card />
         </div>
+        <div className="card">
+            <Card />
+        </div>
+        
       </div>
 
     <div className="map-wrapper">
