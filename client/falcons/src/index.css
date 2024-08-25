@@ -5,6 +5,7 @@
   max-width: 100vw;
   overflow-x: hidden;
 } */
+
 .main-div {
   display: flexbox;
   box-sizing: border-box;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Cards from './Cards';
 import Card from './Card'
 import Players from "./Players"
 import '../components/Slider.css';
@@ -73,9 +74,6 @@ function Slider() {
               <h2>{slide.title}</h2>
               <p>{slide.description}</p>
               </div>
-              <div className='ex'>
-                {slide.footer}
-              </div>
               </div>
           ))}
         </div>
@@ -85,7 +83,9 @@ function Slider() {
           </div> */}
       </div>
       
-
+            <div className="card-holder">
+            <Cards />
+            </div>
       
 
     {/* <div className="map-wrapper">

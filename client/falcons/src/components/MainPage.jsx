@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import { slides } from "../data/carouselData.json";
 import Loader from './Loader';
-import Card from './Card';
+import Cards from './Cards';
 
 function MainPage() {
  
@@ -21,7 +21,7 @@ function MainPage() {
         <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p></div>
         <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p></div>
 
-      <Card />
+      <Cards />
      
       </div>
     

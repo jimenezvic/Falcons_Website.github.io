@@ -7,8 +7,8 @@
   height: 60vh; 
   margin-top: 50px;
   position: relative;
-  /* margin-bottom: 30rem; */
-  /* background: #000; */
+  margin-bottom: 30rem;
+ 
 }
 
 .slider .list .item {
@@ -88,10 +88,7 @@
 
 @media (max-width: 768px) {
  
-  .ex {
-    padding: 5% 0;
 
-  }
   .slider .list .item img{
       object-fit: cover;
       height: auto;
@@ -160,22 +157,3 @@
   max-width: 700px;
   border: 1px solid #000;
 }
-.ex{
-  display: flex;
-  background: #000;
-  justify-content: end;
-  text-align: end;
-  padding: 10% 0;
-}
-
- .slider .list .item .ex {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    z-index: 2; 
-    text-align: center; 
-  }
