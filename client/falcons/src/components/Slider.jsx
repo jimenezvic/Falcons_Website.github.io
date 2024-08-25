@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Cards from './Cards';
 import Card from './Card'
 import Players from "./Players"
+import Footer from './Footer';
 import '../components/Slider.css';
 
 function Slider() {
@@ -98,6 +99,7 @@ function Slider() {
     </div>
    </div>
 
+<Footer />
 
 </div>
     </>

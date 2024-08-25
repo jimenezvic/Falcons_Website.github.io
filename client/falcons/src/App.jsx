@@ -13,6 +13,7 @@ import BottomNav from "./components/BottomNav";
 import Card from "./components/Card";
 import React, {useState, useEffect} from "react";
 import Loader from "./components/Loader";
+import Footer from "./components/Footer";
 function App() {
 
 const location = useLocation();
