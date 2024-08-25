@@ -3,6 +3,7 @@ import Cards from './Cards';
 import Card from './Card'
 import Players from "./Players"
 import Footer from './Footer';
+import MatchesTable from './MatchesTable';
 import '../components/Slider.css';
 
 function Slider() {
@@ -83,7 +84,9 @@ function Slider() {
             <button id='next' onClick={goToNextSlide}><i class="fa-solid fa-greater-than"></i></button>
           </div> */}
       </div>
-      
+      <div>
+        <MatchesTable />
+      </div>
             <div className="card-holder">
             <Cards />
             </div>

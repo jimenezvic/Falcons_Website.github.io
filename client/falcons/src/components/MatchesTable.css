@@ -1,0 +1,71 @@
+.matches-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: #f4f4f4;
+  }
+  
+  .match-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s;
+  }
+  
+  .match-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .match-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+  
+  .teams {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .team img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .team p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #333;
+  }
+  
+  .vs {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #777;
+  }
+  
+  .result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007BFF;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .matches-table {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .match-card {
+      width: 100%;
+    }
+  }
+  
