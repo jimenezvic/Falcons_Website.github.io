@@ -1,5 +1,10 @@
 .app{
     height: 100vh;
+    background: #000;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    
 }
 .card:hover{
     box-shadow: 5px 10px 20px 1px rgba(6, 220, 54, 0.23) !important;

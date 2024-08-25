@@ -153,7 +153,31 @@
   width: 100%;
 
 }
-.map-wrapper{
-  max-width: 700px;
-  border: 1px solid #000;
+.contact-in{
+  width:80% ;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px #666;
+  margin-top: 20px;
+}
+
+.contact-map{
+  width: 100%;
+  height: auto;
+  flex: 50%;
+
+}
+.contact-form{
+  width: 100%;
+  height: auto;
+  flex: 50%;
+}
+.contact-form h1{
+  margin-bottom: 10px;
+
 }

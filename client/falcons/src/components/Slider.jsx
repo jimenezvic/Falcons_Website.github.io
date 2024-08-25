@@ -88,9 +88,15 @@ function Slider() {
             </div>
       
 
-    {/* <div className="map-wrapper">
+   <div className="contact-in">
+    <div className="contact-map">
     <iframe className='googlemap' width="100%" height="600" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=2199%20Smith%20Road%20West%20Chicago,%20IL%2060185%20United%20States+(Nest)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps systems</a></iframe>
-    </div> */}
+    </div>
+    <div className="contact-form">
+      <h1>CornerStone West Chicago</h1>
+      
+    </div>
+   </div>
 
 
 </div>
