@@ -25,7 +25,7 @@ function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/falcs', {
+      const response = await fetch('https://falcons-website-api.onrender.com/falcs', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
@@ -42,7 +42,7 @@ function Form() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3001/falcs');
+      const response = await fetch('https://falcons-website-api.onrender.com/falcs');
       const data = await response.json();
       setDataList(data);
     } catch (error) {
@@ -52,7 +52,7 @@ function Form() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:3001/falcs/${id}`, {
+      await fetch(`https://falcons-website-api.onrender.com/falcs/${id}`, {
         method: 'DELETE',
       });
       fetchData(); 
@@ -64,7 +64,7 @@ function Form() {
   const handleUpdate = async (id) => {
     const updatedData = { ...formData, name: 'Updated Name' }; 
     try {
-      await fetch(`http://localhost:3001/falcs/${id}`, {
+      await fetch(`https://falcons-website-api.onrender.com/falcs/${id}`, {
         method: 'PUT',
         body: JSON.stringify(updatedData),
         headers: {
