@@ -15,15 +15,15 @@ function MainPage() {
   return (
     <div className="main-container">
       
-    
       <section className="intro-section">
         <div className="intro-content">
           <div className="image-div">
             <img src="/images/myLogo.png" alt="Falcons Academy" />
           </div>
           <div className="text-div">
-            <h2>The Falcons Academy Project</h2>
-            <p>Welcome to Falcons Academy, where we inspire young athletes to reach their potential through teamwork, respect, and dedication.</p>
+            <h2 className='tlt'>The Falcons Academy Project</h2>
+            <p className='messg'>Welcome to Falcons Academy, where we inspire young athletes to reach their potential through teamwork, respect, and dedication.</p>
+            {/* <img src="images/bro.jpg" alt="" id='foto'/> */}
           </div>
         </div>
       </section>
@@ -61,7 +61,7 @@ function MainPage() {
               <button>Learn More</button>
             </div>
           </div>
-          <div className="service-div" onClick={() => handleButtonClick("We have exciting future projects, including expanded training facilities and a new stadium.")}>
+          <div className="service-div" onClick={() => handleButtonClick("We have exciting future projects, including expanded training facilities.")}>
             <img src="/images/pl.jpg" alt="Future Projects" />
             <div className="service-footer">
               <h3>Future Projects</h3>

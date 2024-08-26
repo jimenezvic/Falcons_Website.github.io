@@ -37,7 +37,7 @@ function Proyect() {
       <Players />
     <section className="contact">
       <form onSubmit={onSubmit}>
-        <h2>Contact Form Falcs</h2>
+        <h2 className='tlt'>Contact Form</h2>
         <div className="input-box">
           <label>Full Name</label>
           <input type="text" className='field' placeholder='Enter your name' required name='name' />

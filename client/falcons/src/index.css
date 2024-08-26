@@ -62,9 +62,11 @@
 }
 .tlt{
   font-family: "Falcons Font", serif;
-}
+  background: linear-gradient(0deg, rgba(232,34,34,1) 0%, rgba(52,3,3,1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;}
 .messg{
-  margin-top: 10rem;
+  margin-top: 5rem;
   font-family: "Rajdhani", sans-serif;
   color: #ffff;
 
@@ -72,6 +74,10 @@
 .theFormLink{
   text-decoration: none;
   
+}
+#foto{
+  display: flex;
+  width: 20rem;
 }
 
 

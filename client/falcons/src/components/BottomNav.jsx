@@ -13,27 +13,29 @@ function BottomNav() {
       <nav className='navbar'>
         <div className="nav-container">
           <NavLink to='/' className='nav-logo' activeclassname='active' onClick={handleClick}>
-          Falcons Academy
+          FALCONS ACADEMY
           </NavLink>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className='nav-item'>
-            <NavLink  to='/' className='nav-links' activeclassname='active' onClick={handleClick}>
+          <li className='nav-item'>
+            <NavLink to='/registration' className='nav-links' activeclassname='active' onClick={handleClick}>
           Home
           </NavLink>
             </li>
             <li className='nav-item'>
           <NavLink to='/proyect' className='nav-links' activeclassname='active' onClick={handleClick}>
-          Proyect
+          Team
           </NavLink>
             </li>
             <li className='nav-item'>
-            <NavLink to='/registration' className='nav-links' activeclassname='active' onClick={handleClick}>
-          Registration
+            <NavLink  to='/' className='nav-links' activeclassname='active' onClick={handleClick}>
+          Our Project
           </NavLink>
             </li>
+            
+            
             <li className='nav-item'>
             <NavLink  to='/policies' className='nav-links' activeclassname='active' onClick={handleClick}>
-          Register
+          Get Started
           </NavLink>
             </li>
           </ul>
