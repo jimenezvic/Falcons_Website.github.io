@@ -4,7 +4,6 @@ import video from '/images/uniformVideo.mp4';
 
 function Policies() {
   const [buttonEnabled, setButtonEnabled] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,26 +21,10 @@ function Policies() {
       policyDiv.addEventListener('scroll', handleScroll);
     }
 
-    // Cleanup the event listener
     return () => {
       if (policyDiv) {
         policyDiv.removeEventListener('scroll', handleScroll);
       }
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 480); 
-    };
-
-    window.addEventListener('resize', handleResize);
-
-   
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -70,10 +53,8 @@ function Policies() {
 
         <div className="register-div">
           <div className="video-container">
-           
-            <video src={video} autoPlay loop muted controls={!isSmallScreen}></video>
+            <video src={video} autoPlay loop muted style={{ width: '100%', borderRadius: '10px' }}></video>
           </div>
-
           <h3 className="tlt">READY TO JOIN US?</h3>
           
           {!buttonEnabled && (
