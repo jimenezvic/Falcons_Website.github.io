@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import Card from './Card'
 import EventCalendar from './EventCalendar';
 import image from '/images/myLogo.png';
+import kidsimage from '/images/kids.jpg'
+import event from '/images/event.jpg'
 
 function Cards() {
 
@@ -19,7 +21,7 @@ const cards = [
     {
         id:2,
         title: "Falcons Members",
-        image:image,
+        image:kidsimage,
         url: '/proyect',
         text:'Get to know the team behind Falcons Academy'
 
@@ -27,7 +29,7 @@ const cards = [
     {
         id:3,
         title:'Upcoming Events',
-        image: image,
+        image: event,
         url: '/form',
         text: 'Season 2024'
 

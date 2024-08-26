@@ -5,152 +5,74 @@
   max-width: 100vw;
   overflow-x: hidden;
 } */
-
 .main-div {
-  display: flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   overflow-x: hidden;
   max-width: 100vw;
-
 }
-.faster-one-regular {
-  font-family: "Faster One", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-.tlt {
-  font-family: "Falcons Font", serif;
-  text-align: center;
-}
-.messg{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size:medium;
-  font-family: "Xanh Mono", monospace;
-  padding-top: 30%;
-
-}
-.theFormLink{
-  text-decoration: none;
-  font-family: "Xanh Mono", monospace;
-  color: #bebebe;
-}
-.btn{
-  display: flex;
-  justify-content: center;
-  padding-top: 20%;
-  cursor:auto;
-}
-.button-85 {
-  width: 15rem;
-  height: 2rem;
-padding: 0.2em 2em;
-border: none;
-outline: none;
-color: rgb(255, 255, 255);
-background: #111;
-cursor: pointer;
-position: relative;
-z-index: 0;
-border-radius: 10px;
-user-select: none;
--webkit-user-select: none;
-touch-action: manipulation;
-}
-
-.button-85:before {
-content: "";
-background: linear-gradient(
-  45deg,
-  #ff0000,
-  #bf4f4f,
-  #ca3012,
-  #9d1717,
-  #fdfffe,
-  #eb1515,
-  #5c1103,
-  #140f0f,
-  #ffffff
-);
-position: absolute;
-top: -2px;
-left: -2px;
-background-size: 400%;
-z-index: -1;
-filter: blur(5px);
--webkit-filter: blur(5px);
-width: calc(100% + 4px);
-height: calc(100% + 4px);
-animation: glowing-button-85 20s linear infinite;
-transition: opacity 0.3s ease-in-out;
-border-radius: 10px;
-}
-
-@keyframes glowing-button-85 {
-0% {
-  background-position: 0 0;
-}
-50% {
-  background-position: 400% 0;
-}
-100% {
-  background-position: 0 0;
-}
-}
-
-@media(max-width: 480px){
-.policy-div{
-  display: none;
-}
-}
-
-.button-85:after {
-z-index: -1;
-content: "";
-position: absolute;
-width: 100%;
-height: 100%;
-background: #222;
-left: 0;
-top: 0;
-border-radius: 10px;
-}
-
 
 .holder-div {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
   max-width: 100vw;
 }
 
-.policy-div {
-  display: flex;
+.policy-div, .register-div {
   flex: 1;
   padding: 20px;
-  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
 
+.policy-div {
+  background-color: #f9f9f9;
 }
 
 .register-div {
-  flex: 1;
-  padding: 20px;
   background-color: #333;
   color: white;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
-
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
+@media (max-width: 768px) {
+  .holder-div {
+    flex-direction: column;
+  }
 
+  .policy-div, .register-div {
+    flex: none;
+    width: 100%;
+  }
+}
 
+.button-85:disabled {
+  background-color: #555;
 
+  cursor: not-allowed;
+}
+.button-85{
+  background-color: #333;
+  color: #f9f9f9;
+}
+.tlt{
+  font-family: "Falcons Font", serif;
+}
+.messg{
+  margin-top: 10rem;
+  font-family: "Rajdhani", sans-serif;
+  color: #ffff;
 
-
-
-
-
+}
+.theFormLink{
+  text-decoration: none;
+  
+}
 
 
 

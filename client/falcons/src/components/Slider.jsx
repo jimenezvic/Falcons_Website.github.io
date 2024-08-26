@@ -39,8 +39,8 @@ function Slider() {
   const slides = [
     {
       image: '/images/home.jpg',
-      title: 'WELCOME TO FALCONS ACADEMY',
-      description: 'Join a legacy of excellence. At Falcons Academy, every step you take brings you closer to greatness. Embrace the journey and soar to new heights with us.'
+      title: '',
+      description: ''
     },
     {
       image: '/images/dude2.jpg',
