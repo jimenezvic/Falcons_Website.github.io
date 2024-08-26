@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 20px;
-  background-image: url('images/match.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }

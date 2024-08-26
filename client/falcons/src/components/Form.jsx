@@ -81,9 +81,17 @@ function Form() {
     setShowPopup(false);
   };
 
+
+  const style_bg ={
+    background : 'url(images/match.jpg)',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    height:'100%',
+    width:'100%'
+  }
   return (
     <>
-      <div className="bigDiv">
+      <div className="bigDiv" style={style_bg}>
         <div className="mediumDiv">
           <div className="picDiv">
             <h1 className="text-center pt-3" id="ts" >Registration Form</h1>
@@ -160,17 +168,17 @@ function Form() {
           </div>
         </div>
 
-        <div className="formDiv">
+        {/* <div className="formDiv">
           <h2 className="lett co"><mark>Letter from the Coach</mark></h2>
-          <h4 className="lett co">
-            <mark>
+          <h4 className="lett co"> */}
+            {/* <mark>
               We’re so excited to have you with us. First off, I want to thank you for putting your trust in this project. Falcons Academy was born with a strong belief and purpose: every player has potential, and we are here to help you discover and reach it. Together, we’ll work hard to bring out the best in each of you.
               Looking forward to this journey with you!
-            </mark>
-          </h4>
+            </mark> */}
+          {/* </h4>
           <h5 className="lett"><mark>Best,</mark></h5>
           <h5><mark>Ivan Jimenez</mark></h5>
-        </div>
+        </div> */}
       </div>
 
       {showPopup && (
