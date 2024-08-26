@@ -1,6 +1,6 @@
 .app{
     height: 100vh;
-    background: #000;
+    /* background: #000; */
     display: flex;
     flex-wrap: wrap;
     height: auto;
@@ -12,6 +12,7 @@
 }
 .card-body{
     padding: 2rem 0 !important ;
+    margin-bottom: 3px;
 }
 .card-text{
     padding: 0.3rem 1rem;
@@ -26,7 +27,7 @@
 .card-img-top:hover{
     transform: scale(1.2);
 }
-/* Cards.css */
+
 .calendar-container {
     position: fixed;
     top: 10%;
@@ -51,7 +52,6 @@
   }
   
   .show-calendar-button {
-    margin: 20px auto;
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;

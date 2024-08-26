@@ -20,7 +20,7 @@ function Card({ title, imageSource, text, url, onButtonClick, showButton }) {
             </button>
           ) : (
             <Link to={url} target="_blank" rel="noopener noreferrer" className=''>
-              Click to Contribute
+              Learn More
             </Link>
           )}
         </div>
