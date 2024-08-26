@@ -22,7 +22,10 @@ function useNav(){
   const paths = ['/', '/proyect', '/registration', '/policies', '/slider'];
   return paths.includes(location.pathname)
 }
-
+function useFooter(){
+  const paths2 = ['/', '/proyect', '/registration', '/slider'];
+  return paths2.includes(location.pathname)
+}
 
 const [isLoading, setIsLoading] = useState(true);
 
@@ -43,7 +46,7 @@ const [isLoading, setIsLoading] = useState(true);
 
 
    { useNav() ? <UpNav /> : <> </>}
-     
+    
   
       <Routes>
         <Route path='/form' element={<Form />} />
@@ -56,6 +59,9 @@ const [isLoading, setIsLoading] = useState(true);
         
     
       </Routes>
+
+      {useFooter() ? <Footer /> : <></>}
+
     </>
     )
   )

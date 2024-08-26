@@ -133,7 +133,6 @@ function Slider() {
         </div>
       </div>
 
-      <Footer />
     </>
   );
 }

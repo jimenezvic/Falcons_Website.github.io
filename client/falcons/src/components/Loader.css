@@ -16,7 +16,7 @@
     margin-right: 20rem;
     width: 100px;
     height: 100px;
-    animation: loading 2s infinite linear; 
+    animation: loading 1s infinite linear; 
 }
 .rotating-image{
     width: 400px;
