@@ -3,28 +3,38 @@ import {Link} from "react-router-dom"
 import PropTypes from 'prop-types';
 import './Cards.css'
 
-function Card({title, imageSource , text, url}){
-    return(
-       <div className="card text-center bg-dark ">
-       <div className="overflow"> <img src={imageSource} alt=""  className='card-img-top'/></div>
-        <div className="card-body text-light">
-            <h4 className='card-title'>{title}</h4>
-            <p className='card-text text-secondary'>
-                {
-                    text ? text : 'Lorem'
-                }
-            </p>
-            <Link to={url} target="_blank" rel="noopener noreferrer" className='btn btn-outline-primary rounded-0'>Click to Cone </Link>
+function Card({ title, imageSource, text, url, onButtonClick, showButton }) {
+    return (
+      <div className="card text-center bg-dark">
+        <div className="overflow">
+          <img src={imageSource} alt="" className='card-img-top' />
         </div>
-            
-       </div> 
+        <div className="card-body text-light">
+          <h4 className='card-title'>{title}</h4>
+          <p className='card-text text-secondary'>
+            {text ? text : 'Lorem'}
+          </p>
+          {showButton ? (
+            <button onClick={onButtonClick} className="show-calendar-button">
+              Show Calendar
+            </button>
+          ) : (
+            <Link to={url} target="_blank" rel="noopener noreferrer" className=''>
+              Click to Contribute
+            </Link>
+          )}
+        </div>
+      </div>
     );
-}
-Card.propTypes ={
+  }
+  
+  Card.propTypes = {
     title: PropTypes.string.isRequired,
     url: PropTypes.string,
     imageSource: PropTypes.string,
-    text: PropTypes.string
-    
-}
-export default Card;
+    text: PropTypes.string,
+    onButtonClick: PropTypes.func,
+    showButton: PropTypes.bool,
+  };
+  
+  export default Card;
