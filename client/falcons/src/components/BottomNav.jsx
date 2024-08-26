@@ -28,14 +28,14 @@ function BottomNav() {
             </li>
             <li className='nav-item'>
             <NavLink  to='/' className='nav-links' activeclassname='active' onClick={handleClick}>
-          Our Project
+          Project
           </NavLink>
             </li>
             
             
             <li className='nav-item'>
             <NavLink  to='/policies' className='nav-links' activeclassname='active' onClick={handleClick}>
-          Get Started
+          Register
           </NavLink>
             </li>
           </ul>

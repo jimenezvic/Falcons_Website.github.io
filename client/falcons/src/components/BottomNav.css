@@ -41,8 +41,12 @@
     padding: 0.5rem 1rem;
     height: 100%;
     border-bottom: 3px solid transparent;
+    font-family: "Falcons Font", serif;
+        
+    
 }
 .nav-item{
+    
     line-height: 40px;
     margin-right: 1rem;
 }
@@ -84,14 +88,19 @@ background: linear-gradient(0deg, rgba(232,34,34,1) 0%, rgba(52,3,3,1) 100%);
     }
 
     .nav-menu.active{
-        background: #1f5156;
+        background: rgb(232,34,34);
+        background: linear-gradient(0deg, rgba(232,34,34,1) 0%, rgba(52,3,3,1) 100%);
         left: 0px;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
     }
     .nav-item .active{
-        color: aquamarine;
+        font-family: "Falcons Font", serif;
+        background: rgb(65,49,13);
+        background: linear-gradient(0deg, rgba(65,49,13,1) 0%, rgba(219,144,40,1) 100%);
+        -webkit-background-clip: text;
+        color: transparent;
         border: none;
     }
     .nav-links{
