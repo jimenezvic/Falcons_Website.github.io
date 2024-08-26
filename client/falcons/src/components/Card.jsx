@@ -5,21 +5,21 @@ import './Cards.css'
 
 function Card({ title, imageSource, text, url, onButtonClick, showButton }) {
     return (
-      <div className="card text-center bg-dark">
+      <div className="card text-center bg-success">
         <div className="overflow">
           <img src={imageSource} alt="" className='card-img-top' />
         </div>
         <div className="card-body text-light">
           <h4 className='card-title'>{title}</h4>
-          <p className='card-text text-secondary'>
-            {text ? text : 'Lorem'}
+          <p className='card-text text-dark'>
+            {text ? text : 'Falcons'}
           </p>
           {showButton ? (
             <button onClick={onButtonClick} className="show-calendar-button">
-              Show Calendar
+              Calendar
             </button>
           ) : (
-            <Link to={url} target="_blank" rel="noopener noreferrer" className=''>
+            <Link to={url} target="_blank" rel="noopener noreferrer" className='botton'>
               Learn More
             </Link>
           )}

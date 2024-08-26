@@ -13,23 +13,23 @@ const cards = [
         id:1,
         title: "Get Your Falcon ID",
         image: image,
-        url: 'proyect',
+        url: '/form',
         text: 'Secure your Falcon ID'
     },
     {
         id:2,
         title: "Falcons Members",
         image:image,
-        url: '/form',
+        url: '/proyect',
         text:'Get to know the team behind Falcons Academy'
 
     },
     {
         id:3,
-        title:'Our Proyect !',
+        title:'Upcoming Events',
         image: image,
         url: '/form',
-        text: ''
+        text: 'Season 2024'
 
     }
 ]
