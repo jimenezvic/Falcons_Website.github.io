@@ -1,38 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import './Form.css';
 
 function Form() {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-  const [gender, setGender] = useState('');
-  const [address, setAddress] = useState('');
-  const [number, setNumber] = useState('');
-  const [position, setPosition] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    age: '',
+    gender: '',
+    address: '',
+    number: '',
+    position: '',
+  });
   const [showPopup, setShowPopup] = useState(false);
+  const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
+    fetchData();
     setShowPopup(true);
   }, []);
 
-  const handleClosePopup = () => {
-    setShowPopup(false);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const collectData = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch('http://localhost:3001/falcs', {
         method: 'POST',
-        body: JSON.stringify({ name, age, gender, address, number, position }),
+        body: JSON.stringify(formData),
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      const data = await response.json(); 
-      console.log(data); 
+      const data = await response.json();
+      console.log(data);
+      fetchData(); 
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/falcs');
+      const data = await response.json();
+      setDataList(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`http://localhost:3001/falcs/${id}`, {
+        method: 'DELETE',
+      });
+      fetchData(); 
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleUpdate = async (id) => {
+    const updatedData = { ...formData, name: 'Updated Name' }; 
+    try {
+      await fetch(`http://localhost:3001/falcs/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(updatedData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      fetchData(); 
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -40,79 +86,88 @@ function Form() {
       <div className="bigDiv">
         <div className="mediumDiv">
           <div className="picDiv">
-            <h1 className="text-center pt-3" id="ts">Registration Form</h1>
+            <h1 className="text-center pt-3" id="ts" >Registration Form</h1>
 
-            <div className="mb-3 mt-3">
-              <label htmlFor="username" className="form-label">Full Name</label>
-              <input
-                type="text"
-                className="form-control"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3 mt-3">
+                <label htmlFor="name" className="form-label">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  className="form-control"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </div>
 
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">Position</label>
-              <input
-                type="text"
-                className="form-control"
-                value={position}
-                onChange={(e) => setPosition(e.target.value)} 
-              />
-            </div>
+              <div className="mb-3">
+                <label htmlFor="position" className="form-label">Position</label>
+                <input
+                  type="text"
+                  name="position"
+                  className="form-control"
+                  value={formData.position}
+                  onChange={handleChange}
+                />
+              </div>
 
-            <div className="mb-3">
-              <label htmlFor="age" className="form-label">Birth Date</label>
-              <input
-                type="text"
-                className="form-control"
-                value={age}
-                onChange={(e) => setAge(e.target.value)} 
-              />
-            </div>
+              <div className="mb-3">
+                <label htmlFor="age" className="form-label">Birth Date</label>
+                <input
+                  type="text"
+                  name="age"
+                  className="form-control"
+                  value={formData.age}
+                  onChange={handleChange}
+                />
+              </div>
 
-            <div className="mb-3">
-              <label htmlFor="gender" className="form-label">Gender</label>
-              <input
-                type="text"
-                className="form-control"
-                value={gender}
-                onChange={(e) => setGender(e.target.value)} 
-              />
-            </div>
+              <div className="mb-3">
+                <label htmlFor="gender" className="form-label">Gender</label>
+                <input
+                  type="text"
+                  name="gender"
+                  className="form-control"
+                  value={formData.gender}
+                  onChange={handleChange}
+                />
+              </div>
 
-            <div className="mb-3">
-              <label htmlFor="address" className="form-label">Address</label>
-              <input
-                type="text"
-                className="form-control"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)} 
-              />
-            </div>
+              <div className="mb-3">
+                <label htmlFor="address" className="form-label">Address</label>
+                <input
+                  type="text"
+                  name="address"
+                  className="form-control"
+                  value={formData.address}
+                  onChange={handleChange}
+                />
+              </div>
 
-            <div className="mb-3">
-              <label htmlFor="number" className="form-label">Phone Number</label>
-              <input
-                type="number"
-                className="form-control"
-                value={number}
-                onChange={(e) => setNumber(e.target.value)} 
-              />
-            </div>
+              <div className="mb-3">
+                <label htmlFor="number" className="form-label">Phone Number</label>
+                <input
+                  type="number"
+                  name="number"
+                  className="form-control"
+                  value={formData.number}
+                  onChange={handleChange}
+                />
+              </div>
 
-            <button type="submit">Submit</button>
+              <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
           </div>
         </div>
 
         <div className="formDiv">
-        <h2 className="lett co"><mark>Letter from the Coach</mark></h2>
-          
-          <h4 className="lett co"><mark>We’re so excited to have you with us. First off, I want to thank you for putting your trust in this project. Falcons Academy was born with a strong belief and purpose: every player has potential, and we're here to help you discover and reach it. Together, we’ll work hard to bring out the best in each of you.
-
-          Looking forward to this journey with you!</mark></h4>
-
+          <h2 className="lett co"><mark>Letter from the Coach</mark></h2>
+          <h4 className="lett co">
+            <mark>
+              We’re so excited to have you with us. First off, I want to thank you for putting your trust in this project. Falcons Academy was born with a strong belief and purpose: every player has potential, and we are here to help you discover and reach it. Together, we’ll work hard to bring out the best in each of you.
+              Looking forward to this journey with you!
+            </mark>
+          </h4>
           <h5 className="lett"><mark>Best,</mark></h5>
           <h5><mark>Ivan Jimenez</mark></h5>
         </div>
@@ -122,14 +177,26 @@ function Form() {
         <div className="popup-overlay">
           <div className="popup-content">
             <h2>Welcome to Falcons Academy!</h2>
-            <p>We're excited to have you on board. Let's make this journey amazing together!</p>
+            <p>We are excited to have you on board. Let's make this journey amazing together!</p>
             <button onClick={handleClosePopup}>Close</button>
           </div>
         </div>
       )}
+
+      {/* <div className="dataList">
+        <h2>Data List</h2>
+        <ul>
+          {dataList.map(item => (
+            <li key={item.id}>
+              {item.name} - {item.position}
+              <button onClick={() => handleUpdate(item.id)} className="btn btn-warning">Update</button>
+              <button onClick={() => handleDelete(item.id)} className="btn btn-danger">Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div> */}
     </>
   );
 }
 
 export default Form;
-
