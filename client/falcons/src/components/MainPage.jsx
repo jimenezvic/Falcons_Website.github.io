@@ -18,7 +18,7 @@ function MainPage() {
       <section className="intro-section">
         <div className="intro-content">
           <div className="image-div">
-            <img src="/images/myLogo.png" alt="Falcons Academy" />
+            <img src="/images/logo.jpg" alt="Falcons Academy"  id='logoss'/>
           </div>
           <div className="text-div">
             <h2 className='tlt'>The Falcons Academy Project</h2>
