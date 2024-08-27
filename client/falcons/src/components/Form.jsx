@@ -9,34 +9,93 @@ function Form() {
     address: '',
     number: '',
     position: '',
+    falconID:  ''
   });
   const [showPopup, setShowPopup] = useState(false);
+  const [falconID, setFalconID] = useState('');
+  const [message, setMessage] = useState('');
   const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
     fetchData();
-    setShowPopup(true);
   }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  
+  const generateCustomID = () => {
+    const { name, age, number } = formData;
+
+    const namePart = name.slice(0, 3).toLowerCase();
+
+    const agePart = age;
+
+    
+    const numberPart = number.slice(-2);
+
+    return `${namePart}${agePart}${numberPart}`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const newFalconID = generateCustomID();
+    
+    
+    console.log("Generated Falcon ID:", newFalconID);
+    
     try {
+     
+      // setFalconID(newFalconID);
+
+      const newFormData = {
+    name: formData.name,
+    age: formData.age,
+    gender: formData.gender,
+    address: formData.address,
+    number: formData.number,
+    position: formData.position,
+    falconID:  "random string"
+      }
+      
       const response = await fetch('https://falcons-website-api.onrender.com/falcs', {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify( newFormData ),
         headers: {
           'Content-Type': 'application/json',
         },
       });
+      console.log(formData)
       const data = await response.json();
-      console.log(data);
-      fetchData(); 
+
+      console.log("API Response Data:", data);
+
+      if (response.ok) {
+        
+        
+        console.log("API Response Data:", data);
+  
+        setMessage(`Hi ${formData.name}, your Falcon ID is ${newFalconID}`);
+        setShowPopup(true);
+  
+        setFormData({
+          name: '',
+          age: '',
+          gender: '',
+          address: '',
+          number: '',
+          position: '',
+          falconID:''
+        });
+  
+        
+        fetchData(); 
+      } else {
+        console.error('Failed to submit form:', response.statusText);
+      }
     } catch (error) {
-      console.error(error);
+      console.error('Error submitting form:', error);
     }
   };
 
@@ -44,36 +103,13 @@ function Form() {
     try {
       const response = await fetch('https://falcons-website-api.onrender.com/falcs');
       const data = await response.json();
+      
+      
+      console.log("Fetched Data:", data);
+      
       setDataList(data);
     } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await fetch(`https://falcons-website-api.onrender.com/falcs/${id}`, {
-        method: 'DELETE',
-      });
-      fetchData(); 
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleUpdate = async (id) => {
-    const updatedData = { ...formData, name: 'Updated Name' }; 
-    try {
-      await fetch(`https://falcons-website-api.onrender.com/falcs/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify(updatedData),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      fetchData(); 
-    } catch (error) {
-      console.error(error);
+      console.error('Error fetching data:', error);
     }
   };
 
@@ -81,20 +117,20 @@ function Form() {
     setShowPopup(false);
   };
 
-
-  const style_bg ={
-    background : 'url(images/match.jpg)',
+  const style_bg = {
+    background: 'url(images/match.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    height:'100%',
-    width:'100%'
-  }
+    height: '100%',
+    width: '100%',
+  };
+
   return (
     <>
       <div className="bigDiv" style={style_bg}>
         <div className="mediumDiv">
           <div className="picDiv">
-            <h1 className="text-center pt-3" id="ts" >Registration Form</h1>
+            <h1 className="text-center pt-3" id="ts">Registration Form</h1>
 
             <form onSubmit={handleSubmit}>
               <div className="mb-3 mt-3">
@@ -167,42 +203,16 @@ function Form() {
             </form>
           </div>
         </div>
-
-        {/* <div className="formDiv">
-          <h2 className="lett co"><mark>Letter from the Coach</mark></h2>
-          <h4 className="lett co"> */}
-            {/* <mark>
-              We’re so excited to have you with us. First off, I want to thank you for putting your trust in this project. Falcons Academy was born with a strong belief and purpose: every player has potential, and we are here to help you discover and reach it. Together, we’ll work hard to bring out the best in each of you.
-              Looking forward to this journey with you!
-            </mark> */}
-          {/* </h4>
-          <h5 className="lett"><mark>Best,</mark></h5>
-          <h5><mark>Ivan Jimenez</mark></h5>
-        </div> */}
       </div>
 
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
-            <h2>Welcome to Falcons Academy!</h2>
-            <p>We are excited to have you on board. Let's make this journey amazing together!</p>
+            <h2>{message}</h2>
             <button onClick={handleClosePopup}>Close</button>
           </div>
         </div>
       )}
-
-      {/* <div className="dataList">
-        <h2>Data List</h2>
-        <ul>
-          {dataList.map(item => (
-            <li key={item.id}>
-              {item.name} - {item.position}
-              <button onClick={() => handleUpdate(item.id)} className="btn btn-warning">Update</button>
-              <button onClick={() => handleDelete(item.id)} className="btn btn-danger">Delete</button>
-            </li>
-          ))}
-        </ul>
-      </div> */}
     </>
   );
 }

@@ -3,9 +3,14 @@ const router = express.Router();
 const Falc = require("../models/falc");
 
 router.get("/", async (req, res) => {
+  try{
   const allFalcs = await Falc.find({});
   res.json(allFalcs);
   // res.json({message:'hello'})
+  }catch(error){
+    console.error('Error fetching data:' , error);
+    res.status(500).json({message:'Failed to fetch data'})
+  }
 });
 
 router.get("/:id", async (req, res) => {
@@ -15,8 +20,15 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const newFalc = await Falc.create(req.body);
-  res.json(newFalc);
+  try{
+    const newFalc = await Falc.create(req.body);
+    res.status(201).json(newFalc);
+    res.json(newFalc);
+
+  }catch(error){
+    console.error('Error saving data:' , error);
+    res.status(500).json({message:'Failed to save data'})
+  }
 });
 
 module.exports = router;

@@ -21,6 +21,9 @@ const falcSchema = new mongoose.Schema({
     position:{
         type:String,
         required:true
+    },
+    falconID:{
+        type:String
     }
 })
 const Falc = mongoose.model('Falc', falcSchema);
