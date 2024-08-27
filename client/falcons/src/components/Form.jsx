@@ -49,14 +49,14 @@ function Form() {
      
       // setFalconID(newFalconID);
 
-      const newFormData = {
+    const newFormData = {
     name: formData.name,
     age: formData.age,
     gender: formData.gender,
     address: formData.address,
     number: formData.number,
     position: formData.position,
-    falconID:  "random string"
+    falconID: formData.falconID
       }
       
       const response = await fetch('https://falcons-website-api.onrender.com/falcs', {
