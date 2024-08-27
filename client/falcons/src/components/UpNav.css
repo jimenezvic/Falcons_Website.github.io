@@ -32,7 +32,7 @@
 
 @font-face{
   font-family: 'Falcons Font';
-  src: url('../../public/Font.ttf') format('truetype');
+  src: url('/Font.ttf') format('truetype');
 }
 .top-navbar {
     /* position:fixed; */

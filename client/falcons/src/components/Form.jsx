@@ -56,7 +56,7 @@ function Form() {
     address: formData.address,
     number: formData.number,
     position: formData.position,
-    falconID: formData.falconID
+    falconID: generateCustomID()
       }
       
       const response = await fetch('https://falcons-website-api.onrender.com/falcs', {
