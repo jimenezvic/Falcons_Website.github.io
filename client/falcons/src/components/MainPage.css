@@ -213,6 +213,15 @@
     }
   }
   #logoss{
+    
     width: 350px;
     height: 350px;
+    margin-bottom: 1rem;
+  }
+  #tltl{
+    font-family: "Falcons Font", serif;
+    background: rgb(96,70,9);
+  background: linear-gradient(0deg, rgba(96,70,9,1) 0%, rgba(224,170,96,1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
   }

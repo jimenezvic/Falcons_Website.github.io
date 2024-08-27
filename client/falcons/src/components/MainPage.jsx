@@ -21,7 +21,7 @@ function MainPage() {
             <img src="/images/logo.jpg" alt="Falcons Academy"  id='logoss'/>
           </div>
           <div className="text-div">
-            <h2 className='tlt'>The Falcons Academy Project</h2>
+            <h2 id='tltl'>The Falcons Academy Project</h2>
             <p className='messg'>Welcome to Falcons Academy, where we inspire young athletes to reach their potential through teamwork, respect, and dedication.</p>
             {/* <img src="images/bro.jpg" alt="" id='foto'/> */}
           </div>
