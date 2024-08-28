@@ -52,28 +52,6 @@ router.put("/:id", async (req, res) => {
     res.status(500).json({ message: "Failed to update data" });
   }
 });
-// Route to update Falcon ID based on ID
-router.put("/update-id/:id", async (req, res) => {
-  const { falconID } = req.body;
-
-  try {
-    // Find the Falcon by ID and update the falconID field
-    const updatedFalc = await Falc.findByIdAndUpdate(
-      req.params.id,
-      { falconID },
-      { new: true, runValidators: true }
-    );
-
-    if (!updatedFalc) {
-      return res.status(404).json({ message: "Falc not found" });
-    }
-
-    res.json({ message: "Falcon ID updated successfully", updatedFalc });
-  } catch (error) {
-    console.error("Error updating Falcon ID:", error);
-    res.status(500).json({ message: "Failed to update Falcon ID" });
-  }
-});
 
 
 router.delete("/:id", async (req, res) => {

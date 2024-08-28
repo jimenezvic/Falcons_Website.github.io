@@ -15,7 +15,7 @@ function Form() {
   const [falconID, setFalconID] = useState('');
   const [message, setMessage] = useState('');
   const [dataList, setDataList] = useState([]);
-  const [editableID, setEditableID] = useState('');
+  const [editFalconID, setEditFalconID] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -30,18 +30,22 @@ function Form() {
     const namePart = name.slice(0, 3).toLowerCase();
     const agePart = age;
     const numberPart = number.slice(-2);
-
     return `${namePart}${agePart}${numberPart}`;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const newFalconID = generateCustomID();
+    setFalconID(newFalconID);
+    setEditFalconID(newFalconID);
+    setShowPopup(true);
+  };
 
+  const handleConfirmID = async () => {
     try {
       const newFormData = {
         ...formData,
-        falconID: newFalconID
+        falconID: editFalconID
       };
 
       const response = await fetch('https://falcons-website-api.onrender.com/falcs', {
@@ -53,10 +57,8 @@ function Form() {
       });
 
       if (response.ok) {
-        setFalconID(newFalconID);
-        setEditableID(newFalconID); // Set the editable ID
-        setMessage(`Hi ${formData.name}, your Falcon ID is ${newFalconID}. Would you like to change the last two digits?`);
-        setShowPopup(true);
+        setMessage(`Hi ${formData.name}, your Falcon ID is ${editFalconID}`);
+        setShowPopup(false);
         setFormData({
           name: '',
           age: '',
@@ -85,47 +87,28 @@ function Form() {
     }
   };
 
-  const handleClosePopup = async () => {
+  const handleClosePopup = () => {
     setShowPopup(false);
-  
-    if (editableID !== falconID) {
-      try {
-        // Update Falcon ID in the backend
-        const response = await fetch(`https://falcons-website-api.onrender.com/falcs/${falconID}`, {
-          method: 'PUT',
-          body: JSON.stringify({ falconID: editableID }),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-  
-        if (response.ok) {
-          setMessage('Falcon ID successfully updated.');
-          setFalconID(editableID); 
-        } else {
-          console.error('Failed to update Falcon ID:', response.statusText);
-        }
-      } catch (error) {
-        console.error('Error updating Falcon ID:', error);
-      }
-    }
   };
-  
-  const handleIDChange = (e) => {
-    const lastTwoDigits = e.target.value.slice(-2); // Only allow modification of last two digits
-    setEditableID(falconID.slice(0, -2) + lastTwoDigits);
+
+  const style_bg = {
+    background: 'url(images/match.jpg)',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    height: '100%',
+    width: '100%',
   };
 
   return (
     <>
-      <div className="bigDiv" style={{ background: 'url(images/match.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '100%', width: '100%' }}>
+      <div className="bigDiv" style={style_bg}>
         <div className="mediumDiv">
           <div className="picDiv">
             <h1 className="text-center pt-3" id="ts">Registration Form</h1>
 
             <form onSubmit={handleSubmit}>
               <div className="mb-3 mt-3">
-                <label htmlFor="name" className="form-label">Full Name</label>
+                <label htmlFor="name" className="form-label">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -199,14 +182,17 @@ function Form() {
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
-            <h2>{message}</h2>
+            {/* <h2>Edit Falcon ID</h2> */}
+            <p>Generated ID: <strong>{falconID}</strong></p>
+            <label htmlFor="editFalconID">Hi <strong className='tlt'>{formData.name}</strong>, your Falcon ID <strong>{falconID}</strong> was generated randomly. Feel free to edit it. <br></br> <br></br><small><strong>*Please ensure it includes both numbers and letters*</strong></small></label>
             <input
               type="text"
-              value={editableID}
-              onChange={handleIDChange}
-              maxLength={falconID.length} // Restrict input length to match the ID length
+              id="editFalconID"
+              value={editFalconID}
+              onChange={(e) => setEditFalconID(e.target.value)}
             />
-            <button onClick={handleClosePopup}>Submit ID</button>
+            <button onClick={handleConfirmID} className="btn btn-primary">Confirm</button>
+            <button onClick={handleClosePopup} className="btn btn-secondary">Close</button>
           </div>
         </div>
       )}
