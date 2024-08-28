@@ -33,7 +33,7 @@ const [isLoading, setIsLoading] = useState(true);
     const dataFetch = () => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 4000);
+      }, 3000);
     };
     dataFetch();
   }, []);

@@ -8,26 +8,26 @@ function Footer() {
       <div className='sb_footer section_padding'>
         <div className='sb_footer-links'>
           <div className="sb_footer-links_div">
-            <h4>Business</h4>
-            <NavLink to='/form' className='footer-link'>Our Form</NavLink>
-            <NavLink to='/project' className='footer-link'>The Project</NavLink>
-            <NavLink to='/registration' className='footer-link'>Registration</NavLink>
+            {/* <h4>Products</h4> */}
+            <NavLink to='/' className='footer-link'>Home</NavLink>
+            <NavLink to='/project' className='footer-link'>About</NavLink>
+            <NavLink to='/registration' className='footer-link'>Contact</NavLink>
           </div>
           <div className="sb_footer-links_div">
-            <h4>Resources</h4>
-            <NavLink to='/resource1' className='footer-link'>Resource 1</NavLink>
-            <NavLink to='/resource2' className='footer-link'>Resource 2</NavLink>
-            <NavLink to='/resource3' className='footer-link'>Resource 3</NavLink>
+            {/* <h4>Shop</h4> */}
+            <NavLink to='#' className='footer-link'>Shop</NavLink>
+            <NavLink to='/#' className='footer-link'>Resources</NavLink>
+            <NavLink to='/#' className='footer-link'>Upcoming Events</NavLink>
           </div>
           <div className="sb_footer-links_div">
-            <h4>Partners</h4>
-            <NavLink to='/partners' className='footer-link'>Partners</NavLink>
+            <h4>Sponsors</h4>
+            <NavLink to='#' className='footer-link'>CaS & A.C</NavLink>
           </div>
           <div className="sb_footer-links_div">
-            <h4>Company</h4>
-            <NavLink to='/company1' className='footer-link'>Company 1</NavLink>
-            <NavLink to='/company2' className='footer-link'>Company 2</NavLink>
-            <NavLink to='/company3' className='footer-link'>Company 3</NavLink>
+            {/* <h4>Company</h4> */}
+            <NavLink to='#' className='footer-link'>FAQ</NavLink>
+            <NavLink to='/policies' className='footer-link'>Register</NavLink>
+            <NavLink to='#' className='footer-link'>Privacy & Termn</NavLink>
           </div>
           <div className="sb_footer-links_div">
             <h4>Follow Us</h4>
@@ -45,9 +45,9 @@ function Footer() {
           <p>&copy; {new Date().getFullYear()} Falcons Academy. All rights reserved.</p>
         </div>
         <div className="sb_footer-below-links">
-          <NavLink to='/terms' className='footer-link'>Terms & Conditions</NavLink>
-          <NavLink to='/privacy' className='footer-link'>Privacy Policy</NavLink>
-          <NavLink to='/cookies' className='footer-link'>Cookie Declaration</NavLink>
+          <NavLink to='/#' className='footer-link'>Terms & Conditions</NavLink>
+          <NavLink to='/#' className='footer-link'>Privacy Policy</NavLink>
+          <NavLink to='/#' className='footer-link'>Cookie Declaration</NavLink>
         </div>
       </div>
     </footer>

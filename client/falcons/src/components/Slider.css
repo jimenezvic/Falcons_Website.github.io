@@ -234,3 +234,9 @@
   }
 }
 
+#tlt{
+  font-family: "FalconsFont", serif;
+  background: linear-gradient(0deg, rgba(232,34,34,1) 0%, rgba(52,3,3,1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}

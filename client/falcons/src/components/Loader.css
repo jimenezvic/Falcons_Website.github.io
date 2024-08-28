@@ -12,15 +12,16 @@
 }
 
 .svgwrapper {
-    margin-bottom: 20rem;
-    margin-right: 20rem;
-    width: 100px;
-    height: 100px;
+    margin-top: 10rem;
+    margin-right: 7rem;
+    margin-bottom: 13rem ;
+    width: 150px;
+    height: 150px;
     animation: loading 1s infinite linear; 
 }
 .rotating-image{
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     animation: rotate-on-axis 2s infinite linear;
 }
 

@@ -41,7 +41,7 @@ function MainPage() {
       <section className="services-section">
         <div className="services-container">
           <div className="service-div" onClick={() => handleButtonClick("We provide top-notch physiotherapy services to ensure that all players remain in peak physical condition.")}>
-            <img src="/images/phy.jpg" alt="Physiotherapy" />
+            <img src="/images/tp.jpg" alt="Physiotherapy" />
             <div className="service-footer">
               <h3>Physiotherapy</h3>
               <button>Learn More</button>

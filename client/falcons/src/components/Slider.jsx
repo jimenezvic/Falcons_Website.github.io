@@ -33,29 +33,29 @@ function Slider() {
   };
 
   const toggleForm = () => {
-    setIsFormOpen(!isFormOpen); // Toggle the form visibility
+    setIsFormOpen(!isFormOpen); 
   };
 
   const slides = [
     {
-      image: '/images/home.jpg',
-      title: '',
-      description: ''
+      image: '/images/pro.jpg',
+      title: '"The only way to do great work is to love what you do." ',
+      description: '2024 Mens Soccer Season Preview'
     },
     {
       image: '/images/dude2.jpg',
-      title: 'GET YOUR FALCON ID',
-      description: 'Unlock your potential. Your Falcon ID is more than just a number—it is your key to a community that believes in your success and future.'
+      title: '&#8220;2024 Men&#x2019;s&#8221; ',
+      description: 'Your Falcon ID is more than just a number, unlock your potential. '
     },
     {
-      image: '/images/players.jpg',
+      image: '/images/pro2.jpg',
       title: 'YOUR SUCCESS STARTS HERE',
-      description: 'Every dream needs a starting point. At Falcons Academy, we provide the foundation for your success. Take the first step and make it count.'
+      description: 'Every dream needs a starting point.Take the first step and make it count.'
     },
     {
       image: '/images/main.jpg',
       title: 'FIND YOUR PLACE HERE',
-      description: 'Belong, grow, and thrive. Falcons Academy is where you find your purpose, passion, and people. Your journey starts with us.'
+      description: 'Belong, grow, and thrive. Falcons Academy is where you find your purpose, passion, and people.'
     }
   ];
 
@@ -67,7 +67,7 @@ function Slider() {
             <div key={index} className={`slide ${activeIndex === index ? 'active' : ''}`}>
               <img src={slide.image} alt={`Slide ${index + 1}`} />
               <div className="footer">
-                <h2>{slide.title}</h2>
+                <title>{slide.title}</title>
                 <p>{slide.description}</p>
               </div>
             </div>

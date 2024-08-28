@@ -9,12 +9,13 @@ function Form() {
     address: '',
     number: '',
     position: '',
-    falconID:  ''
+    falconID: ''
   });
   const [showPopup, setShowPopup] = useState(false);
   const [falconID, setFalconID] = useState('');
   const [message, setMessage] = useState('');
   const [dataList, setDataList] = useState([]);
+  const [editableID, setEditableID] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -24,15 +25,10 @@ function Form() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  
   const generateCustomID = () => {
     const { name, age, number } = formData;
-
     const namePart = name.slice(0, 3).toLowerCase();
-
     const agePart = age;
-
-    
     const numberPart = number.slice(-2);
 
     return `${namePart}${agePart}${numberPart}`;
@@ -41,44 +37,26 @@ function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newFalconID = generateCustomID();
-    
-    
-    console.log("Generated Falcon ID:", newFalconID);
-    
-    try {
-     
-      // setFalconID(newFalconID);
 
-    const newFormData = {
-    name: formData.name,
-    age: formData.age,
-    gender: formData.gender,
-    address: formData.address,
-    number: formData.number,
-    position: formData.position,
-    falconID: generateCustomID()
-      }
-      
+    try {
+      const newFormData = {
+        ...formData,
+        falconID: newFalconID
+      };
+
       const response = await fetch('https://falcons-website-api.onrender.com/falcs', {
         method: 'POST',
-        body: JSON.stringify( newFormData ),
+        body: JSON.stringify(newFormData),
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      console.log(formData)
-      const data = await response.json();
-
-      console.log("API Response Data:", data);
 
       if (response.ok) {
-        
-        
-        console.log("API Response Data:", data);
-  
-        setMessage(`Hi ${formData.name}, your Falcon ID is ${newFalconID}`);
+        setFalconID(newFalconID);
+        setEditableID(newFalconID); // Set the editable ID
+        setMessage(`Hi ${formData.name}, your Falcon ID is ${newFalconID}. Would you like to change the last two digits?`);
         setShowPopup(true);
-  
         setFormData({
           name: '',
           age: '',
@@ -86,11 +64,9 @@ function Form() {
           address: '',
           number: '',
           position: '',
-          falconID:''
+          falconID: ''
         });
-  
-        
-        fetchData(); 
+        fetchData();
       } else {
         console.error('Failed to submit form:', response.statusText);
       }
@@ -103,31 +79,45 @@ function Form() {
     try {
       const response = await fetch('https://falcons-website-api.onrender.com/falcs');
       const data = await response.json();
-      
-      
-      console.log("Fetched Data:", data);
-      
       setDataList(data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
-  const handleClosePopup = () => {
+  const handleClosePopup = async () => {
     setShowPopup(false);
+
+    if (editableID !== falconID) {
+      try {
+        // Update Falcon ID in the backend
+        const response = await fetch('https://falcons-website-api.onrender.com/update-falcs-id', {
+          method: 'PUT',
+          body: JSON.stringify({ falconID: editableID }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          setMessage('Falcon ID successfully updated.');
+        } else {
+          console.error('Failed to update Falcon ID:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error updating Falcon ID:', error);
+      }
+    }
   };
 
-  const style_bg = {
-    background: 'url(images/match.jpg)',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    height: '100%',
-    width: '100%',
+  const handleIDChange = (e) => {
+    const lastTwoDigits = e.target.value.slice(-2); // Only allow modification of last two digits
+    setEditableID(falconID.slice(0, -2) + lastTwoDigits);
   };
 
   return (
     <>
-      <div className="bigDiv" style={style_bg}>
+      <div className="bigDiv" style={{ background: 'url(images/match.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '100%', width: '100%' }}>
         <div className="mediumDiv">
           <div className="picDiv">
             <h1 className="text-center pt-3" id="ts">Registration Form</h1>
@@ -209,7 +199,13 @@ function Form() {
         <div className="popup-overlay">
           <div className="popup-content">
             <h2>{message}</h2>
-            <button onClick={handleClosePopup}>Close</button>
+            <input
+              type="text"
+              value={editableID}
+              onChange={handleIDChange}
+              maxLength={falconID.length} // Restrict input length to match the ID length
+            />
+            <button onClick={handleClosePopup}>Submit ID</button>
           </div>
         </div>
       )}

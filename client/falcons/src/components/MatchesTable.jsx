@@ -8,13 +8,13 @@ const MatchesTable = () => {
   useEffect(() => {
     const fetchedPreviousMatches = [
       {
-        date: '2024-09-15',
+        date: '2024-08-15',
         homeTeam: { name: 'Falcons', logo: 'images/myLogo.png' },
         awayTeam: { name: 'Chaparral', logo: 'images/chaps.png' },
         result: '3 - 1',
       },
       {
-        date: '2024-09-22',
+        date: '2024-08-22',
         homeTeam: { name: 'Falcons', logo: 'images/myLogo.png' },
         awayTeam: { name: 'Tigers', logo: 'images/tiger.png' },
         result: '1 - 1',
@@ -43,7 +43,7 @@ const MatchesTable = () => {
   return (
     <div>
       <div className="matches-section">
-        <div className="section-header">Previous Matches</div>
+        <div className="section-header" id='tlt'>Previous Matches</div>
         <div className="matches-table">
           {previousMatches.map((match, index) => (
             <div key={index} className="match-card">
@@ -66,7 +66,7 @@ const MatchesTable = () => {
       </div>
 
       <div className="matches-section">
-        <div className="section-header">Upcoming Matches</div>
+        <div className="section-header" id='tlt'>Upcoming Matches</div>
         <div className="matches-table">
           {upcomingMatches.map((match, index) => (
             <div key={index} className="match-card">

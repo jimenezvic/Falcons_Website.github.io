@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Card from './Card'
 import EventCalendar from './EventCalendar';
 import image from '/images/myLogo.png';
-import kidsimage from '/images/kids.jpg'
+import kidsimage from '/images/dude.jpg'
 import event from '/images/event.jpg'
 
 function Cards() {

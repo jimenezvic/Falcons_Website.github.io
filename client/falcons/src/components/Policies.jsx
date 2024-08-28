@@ -32,7 +32,7 @@ function Policies() {
     <div className="main-div">
       <div className="holder-div">
         <div className="policy-div" style={{ maxHeight: '400px', overflowY: 'auto' }}>
-          <h2>Falcons Academy Policies</h2>
+          <h2 >Falcons Academy Policies</h2>
           <div className="plot">
             <strong>Code of Conduct:</strong>
             <p>Respect: All players, coaches, and parents must demonstrate respect for others.</p>
