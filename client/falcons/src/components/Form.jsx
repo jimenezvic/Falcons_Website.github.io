@@ -87,20 +87,21 @@ function Form() {
 
   const handleClosePopup = async () => {
     setShowPopup(false);
-
+  
     if (editableID !== falconID) {
       try {
         // Update Falcon ID in the backend
-        const response = await fetch('https://falcons-website-api.onrender.com/update-falcs-id', {
+        const response = await fetch(`https://falcons-website-api.onrender.com/falcs/${falconID}`, {
           method: 'PUT',
           body: JSON.stringify({ falconID: editableID }),
           headers: {
             'Content-Type': 'application/json',
           },
         });
-
+  
         if (response.ok) {
           setMessage('Falcon ID successfully updated.');
+          setFalconID(editableID); 
         } else {
           console.error('Failed to update Falcon ID:', response.statusText);
         }
@@ -109,7 +110,7 @@ function Form() {
       }
     }
   };
-
+  
   const handleIDChange = (e) => {
     const lastTwoDigits = e.target.value.slice(-2); // Only allow modification of last two digits
     setEditableID(falconID.slice(0, -2) + lastTwoDigits);
