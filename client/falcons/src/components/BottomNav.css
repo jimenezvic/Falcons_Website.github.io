@@ -1,5 +1,6 @@
 .navbar{
     background-color: #ffff;
+    /* background: #000; */
     height: 80px;
     display: flex;
     justify-content: center;
@@ -23,7 +24,7 @@
 .nav-logo{
     color:#000;
     /* color: rgb(110, 6, 6); */
-    font-family: "Falcons Font", serif;
+    font-family: "FalconsFont", serif;
     align-items: center;
     margin-left: 20px;
     cursor: pointer;
@@ -39,13 +40,19 @@
     /* height: 100vh; */
 
 }
+@font-face {
+    font-family: 'FalconsFont';
+    font-style: normal;
+    font-weight: 400;
+    src: local('FalconsFont'), url('https://fonts.cdnfonts.com/s/6687/FalconsFont.woff') format('woff');
+  }
 .nav-links{
     color:#000;
     text-decoration: none;
     padding: 0.5rem 1rem;
     height: 100%;
     border-bottom: 3px solid transparent;
-    font-family: "Falcons Font", serif;
+    font-family: "FalconsFont", serif;
         
     
 }
@@ -53,6 +60,7 @@
     
     line-height: 40px;
     margin-right: 1rem;
+
 }
 
 .nav-item::after{
@@ -102,7 +110,7 @@ background: linear-gradient(0deg, rgba(232,34,34,1) 0%, rgba(52,3,3,1) 100%);
         z-index: 1;
     }
     .nav-item .active{
-        font-family: "Falcons Font", serif;
+        font-family: "FalconsFont", serif;
         background: rgb(65,49,13);
         background: linear-gradient(0deg, rgba(65,49,13,1) 0%, rgba(219,144,40,1) 100%);
         -webkit-background-clip: text;

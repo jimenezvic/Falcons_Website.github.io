@@ -30,9 +30,11 @@
   font-style: normal;
 }
 
-@font-face{
-  font-family: 'Falcons Font';
-  src: url('/Font.ttf') format('truetype');
+@font-face {
+  font-family: 'FalconsFont';
+  font-style: normal;
+  font-weight: 400;
+  src: local('FalconsFont'), url('https://fonts.cdnfonts.com/s/6687/FalconsFont.woff') format('woff');
 }
 .top-navbar {
     /* position:fixed; */
@@ -98,7 +100,7 @@
     cursor: pointer;
   }
   .falcones{
-    font-family: "Falcons Font", serif;
+    font-family: "FalconsFont", serif;
     letter-spacing: 14px;
     color: rgb(255, 253, 253);
     font-size: 5vh;
