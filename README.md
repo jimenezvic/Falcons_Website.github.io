@@ -14,4 +14,7 @@ REACH US OUT!
 
 <img width="440" alt="image" src="https://github.com/user-attachments/assets/40563c08-dba7-4145-b5b5-6b296fc2c778">
 
+Top Technologies:
+
+![image](https://github.com/user-attachments/assets/56f14ec0-d7bd-4ed3-946b-2b9e0e6fd3ac)
 
