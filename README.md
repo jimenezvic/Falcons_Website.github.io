@@ -1,6 +1,6 @@
-Hi I'm Ivan Jimenez 🙋🏻‍♂️
+Hi, I'm Ivan Jimenez 🙋🏻‍♂️
 
-I'm a Full Stack Web Developer and Current Developer of the Falcons Academy Project. I've been working on this project for a while and can finally share THE FALCONS ACADEMY PROJECT with you.
+I'm a Full Stack Web Developer and Current Developer of the Falcons Academy Project. I've been working on this project for a while and can finally share THE FALCONS ACADEMY PROJECT.
 
 REACH US OUT!
 
@@ -16,5 +16,30 @@ REACH US OUT!
 
 Top Technologies:
 
-![image](https://github.com/user-attachments/assets/56f14ec0-d7bd-4ed3-946b-2b9e0e6fd3ac)
+🔵REACT 🟡JavaScript 🟢NODE JS 🎨CSS ℹ️Bootstrap
+
+Features
+1. Responsive Design: The website is fully responsive and adjusts to various screen sizes, ensuring an optimal viewing experience on all devices.
+2. Interactive Player Cards: Click on a player image to view detailed information in a dynamic popup.
+3. Creative Design Elements: The design incorporates soccer-themed elements such as icons, animations, and gradients for a unique and engaging user experience.
+4. Contact Form: Integrated contact form with validation and submission to the Web3Forms API, complete with user feedback.
+
+CLONE
+git clone HTTP://github.com/jimenezvic/Falcons_Website.github.io 
+
+
+Open Two Terminals
+//backend
+1. npm INSTALL
+2. cd Server
+3. npm START
+
+//frontend
+1. cd falcons/client
+2. npm run dev
+
+Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
+
+
 
